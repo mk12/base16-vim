@@ -2,7 +2,7 @@
 
 See the [Base16 repository](https://github.com/chriskempson/base16) for more information.  
 
-This theme was forked from [chriskempson/base16-vim](https://github.com/chriskempson/base16-vim). It simplifies it and customizes it to my liking.
+This theme was forked from [chriskempson/base16-vim](https://github.com/chriskempson/base16-vim). It simplifies it and customizes it to my liking. It assumes you are using terminal vim, not GUI vim.
 
 ## Installation
 
