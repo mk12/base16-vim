@@ -102,13 +102,13 @@ call s:hi("Label", s:c0A, "", "")
 call s:hi("Number", s:c09, "", "")
 call s:hi("Operator", s:c0C, "", "none")
 call s:hi("PreProc", s:c09, "", "")
-call s:hi("Repeat", s:c0A, "", "")
+call s:hi("Repeat", s:c0E, "", "")
 call s:hi("Special", s:c0F, "", "")
 call s:hi("SpecialChar", s:c08, "", "")
 call s:hi("Statement", s:c0E, "", "")
 call s:hi("StorageClass", s:c0A, "", "")
 call s:hi("String", s:c0B, "", "")
-call s:hi("Structure", s:c0C, "", "")
+call s:hi("Structure", s:c0A, "", "")
 call s:hi("Tag", s:c0A, "", "")
 call s:hi("Todo", s:c0F, s:c01, "bold")
 call s:hi("Type", s:c0A, "", "none")
@@ -116,7 +116,7 @@ call s:hi("Typedef", s:c0A, "", "")
 
 " C
 call s:hi("cOperator", s:c0C, "", "")
-call s:hi("cPreCondit", s:c0E, "", "")
+call s:hi("cPreCondit", s:c08, "", "")
 
 " C#
 call s:hi("csClass", s:c0A, "", "")
@@ -226,14 +226,12 @@ call s:hi("phpMethodsVar", s:c0C, "", "")
 
 " Python
 call s:hi("pythonOperator", s:c0E, "", "")
-call s:hi("pythonRepeat", s:c0E, "", "")
 call s:hi("pythonInclude", s:c0E, "", "")
 call s:hi("pythonStatement", s:c0E, "", "")
 
 " Ruby
 call s:hi("rubyAttribute", s:c0D, "", "")
 call s:hi("rubyConstant", s:c0A, "", "")
-call s:hi("rubyRepeat", s:c0E, "", "")
 call s:hi("rubyPseudoVariable", s:c0D, "", "")
 call s:hi("rubyInterpolationDelimiter", s:c0F, "", "")
 call s:hi("rubyRegexp", s:c0C, "", "")
@@ -279,6 +277,18 @@ call s:hi("clojureSpecial", s:c0E, "", "")
 
 " Haskell
 call s:hi("haskellPragma", s:c08, "", "")
+call s:hi("haskellDecl", s:c0E, "", "")
+call s:hi("haskellDeclKeyword", s:c0E, "", "")
+
+" Fish
+call s:hi("fishIdentifier", s:c0A, "", "")
+call s:hi("fishStatement", s:c0D, "", "")
+
+" Shell
+call s:hi("shShellVariables", s:c0A, "", "")
+
+" Lua
+call s:hi("luaFuncCall", s:c0D, "", "")
 
 " Cleanup
 delfunction s:hi
