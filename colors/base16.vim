@@ -57,13 +57,13 @@ hi airline_term ctermfg=NONE ctermbg=NONE cterm=NONE
 
 " =========== Standard syntax ==================================================
 
-hi Comment ctermfg=8 ctermbg=NONE cterm=NONE
-hi Constant ctermfg=9 ctermbg=NONE cterm=NONE
+hi Comment ctermfg=8 ctermbg=NONE cterm=italic
+hi Constant ctermfg=6 ctermbg=NONE cterm=NONE
 hi Character ctermfg=1 ctermbg=NONE cterm=NONE
-hi String ctermfg=2 ctermbg=NONE cterm=NONE
-hi Identifier ctermfg=6 ctermbg=NONE cterm=NONE
+hi String ctermfg=6 ctermbg=NONE cterm=NONE
+hi Identifier ctermfg=5 ctermbg=NONE cterm=NONE
 hi Function ctermfg=4 ctermbg=NONE cterm=NONE
-hi Keyword ctermfg=5 ctermbg=NONE cterm=NONE
+hi Keyword ctermfg=2 ctermbg=NONE cterm=NONE
 hi Exception ctermfg=1 ctermbg=NONE cterm=NONE
 hi Macro ctermfg=9 ctermbg=NONE cterm=NONE
 hi Type ctermfg=3 ctermbg=NONE cterm=NONE
@@ -96,6 +96,7 @@ hi! link Delimiter Special
 hi! link cStructure Structure
 hi! link cOperator Operator
 hi! link cPreCondit PreCondit
+hi! link cInclude PreCondit
 
 " C#
 hi! link csClass Type
@@ -106,8 +107,11 @@ hi! link csUnspecifiedStatement Statement
 hi! link csNewDeclaration Keyword
 
 " C++
+" TODO const, etc. yellow? too much yellow
+hi! link cppStorageClass StorageClass
 hi! link cppAccess StorageClass
 hi! link cppSTLnamespace Normal
+hi! link cppSTLtype Type
 
 " CSS
 hi! link cssBraces Normal
@@ -133,13 +137,24 @@ hi DiffLine ctermfg=4 ctermbg=0 cterm=NONE
 hi DiffRemoved ctermfg=1 ctermbg=0 cterm=NONE
 
 " Fish
-hi! link fishIdentifier Type
+hi! link fishIdentifier Identifier
 hi! link fishStatement Statement
 
 " Go
 hi! link goBuiltins Function
 hi! link goDeclType Structure
 hi! link goLabel Keyword
+
+" Rust
+hi! link rustModPath Normal
+hi! link rustModPathSep Normal
+hi! link rustIdentifier Type
+hi! link rustSelf Identifier
+hi! link rustEnumVariant Function
+hi! link rustDynKeyword Type
+hi! link rustOperator Normal
+hi! link rustSigil Identifier
+hi! link rustStorage Identifier
 
 " HTML
 hi! link htmlBold Bold
@@ -153,14 +168,20 @@ hi! link htmlArg Function
 hi! link haskellDecl Keyword
 hi! link haskellDeclKeyword Keyword
 hi! link haskellPragma Macro
+hi! link haskellIdentifier Function
+hi! link haskellOperators Keyword
 
 " Java
 hi! link javaClassDecl Keyword
-hi! link javaDocParam Identifier
+hi! link javaDocTags Identifier
+hi! link javaDocParam Function
 hi! link javaDocSeeTagParam javaDocParam
-hi! link javaDocTags Function
-hi! link javaOperator Function
+hi! link javaOperator Keyword
 hi! link javaTypeDef Identifier
+hi! link javaMethodDecl Keyword
+hi! link javaExceptions Statement
+hi! link javaScopeDecl Statement
+hi! link javaStorageClass Statement
 
 " JavaScript
 hi! link javaScript Normal
@@ -171,7 +192,7 @@ hi! link jsBuiltins Function
 hi! link jsClassDefinition Type
 hi! link jsClassFuncName Function
 hi! link jsClassMethodType Type
-hi! link jsExceptions Exception
+hi! link jsExceptions Statement
 hi! link jsExportDefault Keyword
 hi! link jsFuncCall Function
 hi! link jsFuncName Function
@@ -186,9 +207,14 @@ hi! link jsStatement Statement
 hi! link jsStorageClass Keyword
 hi! link jsThis Identifier
 hi! link jsUndefined Constant
+hi! link jsArrowFunction Keyword
 
 " Lua
+hi! link luaLocal Keyword
+hi! link luaSpecialTable Type
+hi! link luaFuncKeyword Keyword
 hi! link luaFuncCall Function
+hi! link luaBraces Normal
 
 " Markdown
 hi mkdHeading ctermfg=4 ctermbg=NONE cterm=NONE
@@ -221,13 +247,13 @@ hi! link pythonDecorator Function
 hi! link rubyAttribute Function
 hi! link rubyClass Keyword
 hi! link rubyClassName Type
-hi! link rubyConstant Constant
+hi! link rubyConstant Type
 hi! link rubyDefine Keyword
 hi! link rubyInterpolationDelimiter Special
-hi! link rubyPseudoVariable Type
+hi! link rubyPseudoVariable Identifier
 hi! link rubyRegex Operator
 hi! link rubyStringDelimiter String
-hi! link rubySymbol Operator
+hi! link rubySymbol Constant
 
 " SASS
 hi sassidChar ctermfg=1 ctermbg=NONE cterm=NONE
@@ -241,9 +267,15 @@ hi! link shQuote String
 hi! link shVariable Normal
 hi! link shShellVariables Normal
 hi! link shSetList Normal
-hi! link shDerefSimple Type
+hi! link shDerefSimple Identifier
+hi! link shRepeat Normal
 
 " =========== Other ============================================================
+
+" fzf
+hi fzf1 ctermfg=1 ctermbg=10 cterm=bold
+hi fzf2 ctermfg=2 ctermbg=10 cterm=bold
+hi fzf3 ctermfg=13 ctermbg=10 cterm=bold
 
 " Git
 hi gitcommitOverflow ctermfg=1 ctermbg=NONE cterm=NONE
