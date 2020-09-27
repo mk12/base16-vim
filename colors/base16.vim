@@ -19,7 +19,7 @@ hi Exception ctermfg=1 ctermbg=NONE cterm=NONE
 hi FoldColumn ctermfg=6 ctermbg=10 cterm=NONE
 hi Folded ctermfg=13 ctermbg=10 cterm=NONE
 hi IncSearch ctermfg=10 ctermbg=9 cterm=NONE
-hi Italic ctermfg=NONE ctermbg=NONE cterm=NONE
+hi Italic ctermfg=NONE ctermbg=NONE cterm=italic
 hi Macro ctermfg=1 ctermbg=NONE cterm=NONE
 hi MatchParen ctermfg=NONE ctermbg=11 cterm=NONE
 hi ModeMsg ctermfg=2 ctermbg=NONE cterm=NONE
@@ -34,7 +34,7 @@ hi Visual ctermfg=NONE ctermbg=11 cterm=NONE
 hi VisualNOS ctermfg=1 ctermbg=NONE cterm=NONE
 hi WarningMsg ctermfg=3 ctermbg=NONE cterm=NONE
 hi WildMenu ctermfg=10 ctermbg=7 cterm=NONE
-hi Title ctermfg=4 ctermbg=NONE cterm=NONE
+hi Title ctermfg=4 ctermbg=NONE cterm=bold
 hi Conceal ctermfg=4 ctermbg=0 cterm=NONE
 hi Cursor ctermfg=0 ctermbg=7 cterm=NONE
 hi NonText ctermfg=11 ctermbg=NONE cterm=NONE
@@ -88,7 +88,7 @@ hi! link Define Macro
 hi! link SpecialChar Character
 hi! link Include Keyword
 hi! link Tag Special
-hi! link Delimiter Special
+hi! link Delimiter Normal
 
 " =========== Languages ========================================================
 
@@ -156,6 +156,9 @@ hi! link rustOperator Normal
 hi! link rustSigil Identifier
 hi! link rustStorage Identifier
 
+" Scheme
+hi! link schemeQuote Identifier
+
 " HTML
 hi! link htmlBold Bold
 hi! link htmlItalic Italic
@@ -163,6 +166,12 @@ hi! link htmlTag Function
 hi! link htmlEndTag Function
 hi! link htmlTagName Function
 hi! link htmlArg Function
+" hi! link htmlH1 Bold
+" hi! link htmlH2 Bold
+" hi! link htmlH3 Bold
+" hi! link htmlH4 Bold
+" hi! link htmlH5 Bold
+" hi! link htmlH6 Bold
 
 " Haskell
 hi! link haskellDecl Keyword
@@ -217,17 +226,20 @@ hi! link luaFuncCall Function
 hi! link luaBraces Normal
 
 " Markdown
-hi mkdHeading ctermfg=4 ctermbg=NONE cterm=NONE
 hi mkdCode ctermfg=2 ctermbg=NONE cterm=NONE
 hi mkdCodeDelimiter ctermfg=2 ctermbg=NONE cterm=NONE
+hi mkdCodeStart ctermfg=8 ctermbg=NONE cterm=NONE
 hi mkdListItem ctermfg=3 ctermbg=NONE cterm=NONE
 hi mkdError ctermfg=7 ctermbg=0 cterm=NONE
-hi mkdLink ctermfg=6 ctermbg=NONE cterm=NONE
-hi mkdDelimiter ctermfg=5 ctermbg=NONE cterm=NONE
-hi mkdURL ctermfg=5 ctermbg=NONE cterm=NONE
-hi mkdID ctermfg=5 ctermbg=NONE cterm=NONE
-hi mkdLinkDef ctermfg=5 ctermbg=NONE cterm=NONE
-hi mkdLinkDefTarget ctermfg=7 ctermbg=NONE cterm=NONE
+hi mkdLink ctermfg=5 ctermbg=NONE cterm=NONE
+hi mkdURL ctermfg=8 ctermbg=NONE cterm=NONE
+hi! link mkdHeading Title
+hi! link mkdID mkdURL
+hi! link mkdDelimiter mkdLink
+hi! link mkdLinkDef mkdLink
+hi! link mkdLinkDefTarget mkdURL
+hi! link mkdItalic Italic
+hi! link mkdCodeEnd mkdCodeStart
 
 " PHP
 hi phpComparison ctermfg=7 ctermbg=NONE cterm=NONE
@@ -264,11 +276,13 @@ hi sassMixinName ctermfg=4 ctermbg=NONE cterm=NONE
 
 " Shell
 hi! link shQuote String
-hi! link shVariable Normal
+hi! link shVariable Identifier
 hi! link shShellVariables Normal
 hi! link shSetList Normal
 hi! link shDerefSimple Identifier
 hi! link shRepeat Normal
+hi! link shOption Normal
+hi! link shCommandSub Normal
 
 " =========== Other ============================================================
 
